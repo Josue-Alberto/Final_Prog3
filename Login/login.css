@@ -30,9 +30,19 @@ label {
 #check {
   margin-left: 10%;
 }
-#submit {
+#submit{
   text-align: center;
   background-color: rgb(26, 116, 219);
+  border-radius: 5px;
+  width: 78%;
+  border-style: solid;
+  padding: 2%;
+  color: white;
+  margin-left: 12%;
+}
+#Register {
+  text-align: center;
+  background-color: rgb(188, 32, 32);
   border-radius: 5px;
   width: 78%;
   border-style: solid;
