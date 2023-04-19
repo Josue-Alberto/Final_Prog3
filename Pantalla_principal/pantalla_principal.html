@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Registrarse/Registrarse.css">
+</head>
+
+<body>
+    <div id="login">
+
+        <br>
+        <form action="">
+            <h1 id="sign">Registrar</h1>
+            <br>
+            <br>
+            <label for="Imagen">Imagen</label><br><br>
+            <center>
+                <div id="Cuadroimg">
+                    <img id="imagen" class="imagen-minima">
+                </div>
+            </center>
+            <br>
+            <input id="Imagen" name="Imagen" onchange="mostrarImagen(this)" type="file">
+            <br>
+            <br>
+
+            <label for="Cedula">Cedula</label><br>
+            <input id="Cedula" name="Cedula" placeholder="Escribe tu Cedula..." type="text">
+            <br>
+            <label for="Nombre">Nombre</label><br><br>
+            <input id="Nombre" name="Nombre" placeholder="Escribe tu Nombre..." type="text">
+            <br>
+            <br>
+
+            <label for="Sexo">Sexo</label><br>
+            <input id="Sexo" name="Sexo" placeholder="Escribe tu Sexo..." type="text">
+            <br>
+            <br>
+
+            <label for="Fecha_Nacimiento">Fecha nacimiento</label><br>
+            <input id="Fecha_Nacimiento" name="Fecha_Nacimiento" placeholder="Escribe tu Usuario..." type="date">
+            <br>
+            <br>
+            <label for="Contraseña">Contraseña</label>
+            <br>
+            <input id="Contraseña" name="Contraseña" placeholder="Escribe tu Contraseña..." type="password">
+            <br>
+            <br>
+
+            <button id="Guardar" name="Guardar" type="Guardar">Guardar</button>
+            <a href="/Login/login.html"><button id="Register" name="Register" type="button">Cancelar</button></a>
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+
+
+
+
+            <script>
+                function mostrarImagen(input) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        document.getElementById("imagen").src = e.target.result;
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+
+                document.getElementById("Guardar").addEventListener("click", function () {
+                    var imagen = document.getElementById("Imagen").value;
+                    var cedula = document.getElementById("Cedula").value;
+                    var nombre = document.getElementById("Nombre").value;
+                    var sexo = document.getElementById("Sexo").value;
+                    var fechaNacimiento = document.getElementById("Fecha_Nacimiento").value;
+                    var contraseña = document.getElementById("Contraseña").value;
+
+                    if (imagen == "" || cedula == "" || nombre == "" || sexo == "" || fechaNacimiento == "" || contraseña == "") {
+                        alert("Por favor, complete todos los campos antes de guardar.");
+                    } else {
+                        // Si todos los campos están completos, se permite enviar el formulario.
+                        document.querySelector("form").submit();
+                    }
+                });
+            </script>
+
+
+        </form>
+
+    </div>
+</body>
+<script type="module">
+
+    // Import the functions you need from the SDKs you need
+  
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
+  
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-analytics.js";
+  
+    // TODO: Add SDKs for Firebase products that you want to use
+  
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+  
+    // Your web app's Firebase configuration
+  
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  
+    const firebaseConfig = {
+  
+      apiKey: "AIzaSyBNCdVoofPmLzKTP4GpAj6FBbgHmDeJ9VU",
+  
+      authDomain: "finalprog3-624b9.firebaseapp.com",
+  
+      projectId: "finalprog3-624b9",
+  
+      storageBucket: "finalprog3-624b9.appspot.com",
+  
+      messagingSenderId: "117878120298",
+  
+      appId: "1:117878120298:web:80062932ed6f9b063a8f13",
+  
+      measurementId: "G-JJDLCYNBG3"
+  
+    };
+  
+  
+    // Initialize Firebase
+  
+    const app = initializeApp(firebaseConfig);
+  
+    const analytics = getAnalytics(app);
+  
+  </script>
+</html>
